@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ator.nome}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="ator">
+    <ion-card-header>
+      <img *ngIf="ator.cartaz" src="{{ator.cartaz}}" />
+      <ion-icon *ngIf="!ator.cartaz" name="videcam-off"></ion-icon>
+    </ion-card-header>
+
+    <ion-card-content>
+      <h1>{{ator.nome}}</h1>
+      <p>{{ator.idade}}</p>
+      <p>{{ator.dataNascimento}}</p>
+    </ion-card-content>
+    <ion-item>
+      <p>Filmes: </p><br>
+      <ion-badge color="medium" *ngFor="let papel of ator.principaisPapeis">{{papel}}</ion-badge>
+    </ion-item>
+  </ion-card>
+</ion-content>
