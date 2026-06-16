@@ -21,6 +21,7 @@
           <div>
             <h1>{{serie.nome}}</h1>
             <p>{{serie.lancamento}}</p>
+            <p>{{serie.temporadas}}</p>
             <ion-badge color="medium" *ngFor="let genero of serie.generos">{{genero}}</ion-badge>
             <ion-icon name="star" [color]="serie.favorito===true ? 'warning' : ('light')"></ion-icon> 
           </div>
